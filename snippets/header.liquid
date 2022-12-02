@@ -5,5 +5,9 @@
 
   {%- render 'nav-list', handle: 'main-menu' -%}
 
+  <a href="/search">Search</a>
+
+  {%- render 'currency-picker' -%}
+
   <a href="/cart">{{ 'cart.button.count_html' | t: itemCount: cart.item_count }}</a>
 </div>
