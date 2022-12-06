@@ -1,6 +1,89 @@
 {%- schema -%}
 {
   "name": "Slideshow",
-  "class": "hero-slideshow"
+  "class": "hero-slideshow",
+  "settings": [
+    {
+      "id": "autoplay",
+      "type": "checkbox",
+      "label": "autoplay slideshow",
+      "default": true
+    },
+    {
+      "id": "autoplay_speed",
+      "type": "range",
+      "label": "autoplay Speed",
+      "min": 2000,
+      "max": 8000,
+      "step": 500,
+      "unit": "ms",
+      "default": 5000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "choose image"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "placeholder": "slider Title"
+        },
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "Slide content"
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Button URL"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "button Text",
+          "placeholder": "Shop now",
+          "info": "Defaults to \"Shop Now\""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "hero",
+      "name": "Slideshow",
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 6500
+      },
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "title": "slide 1",
+            "content": "Some slide 1 content",
+            "button_url": "#",
+            "button_text": "Slide button"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "title": "slide 2",
+            "content": "Some slide 2 content",
+            "button_url": "#"
+          }
+        }
+      ]
+    }
+  ]
 }
 {%- endschema -%}
