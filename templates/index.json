@@ -1,8 +1,94 @@
 {
-    "sections": {
-        "index": {
-            "type": "index-section"
-        }
+  "sections": {
+    "index": {
+      "type": "index-section",
+      "settings": {
+      }
     },
-    "order": ["index"]
+    "3b3aa77b-b0b0-465f-9340-facec3a85775": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16613073944830__3b3aa77b-b0b0-465f-9340-facec3a85775-16704177944785644a-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/collection-hero.jpg",
+            "title": "slide 1",
+            "content": "Some slide 1 content",
+            "button_url": "#",
+            "button_text": "Slide button"
+          }
+        },
+        "template--16613073944830__3b3aa77b-b0b0-465f-9340-facec3a85775-16704177944785644a-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hero-stitch.jpg",
+            "title": "slide 2",
+            "content": "Some slide 2 content",
+            "button_url": "#",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16613073944830__3b3aa77b-b0b0-465f-9340-facec3a85775-16704177944785644a-0",
+        "template--16613073944830__3b3aa77b-b0b0-465f-9340-facec3a85775-16704177944785644a-1"
+      ],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 6500
+      }
+    },
+    "ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d": {
+      "type": "content",
+      "blocks": {
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-0",
+            "max_products": 2,
+            "title": "collection Tile",
+            "content": "Lorem impsum",
+            "show_button": true,
+            "button_text": "Shop now"
+          }
+        },
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-1": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/show-3.jpg",
+            "title": "New block 1",
+            "content": "Lorem impusm dolor sit amel",
+            "show_button": true,
+            "button_url": "#",
+            "button_text": "",
+            "direction": "rtl"
+          }
+        },
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-2": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/show-1.jpg",
+            "title": "New block 2",
+            "content": "Lorem impusm dolor sit amel",
+            "show_button": true,
+            "button_url": "#",
+            "button_text": "",
+            "direction": "ltr"
+          }
+        }
+      },
+      "block_order": [
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-0",
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-1",
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-2"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "index",
+    "3b3aa77b-b0b0-465f-9340-facec3a85775",
+    "ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d"
+  ]
 }
