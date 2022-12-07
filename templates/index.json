@@ -75,12 +75,23 @@
             "button_text": "",
             "direction": "ltr"
           }
+        },
+        "176fdf04-c24f-4113-8a21-3d90295069af": {
+          "type": "quote",
+          "settings": {
+            "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since th",
+            "source": "John Appleseed\nApple industries Inc",
+            "show_button": true,
+            "button_url": "#",
+            "button_text": "Read more"
+          }
         }
       },
       "block_order": [
         "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-0",
         "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-1",
-        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-2"
+        "template--16613073944830__ad6ea1f0-32d2-4661-88ea-e6e906bd1f7d-16704177948db10246-2",
+        "176fdf04-c24f-4113-8a21-3d90295069af"
       ],
       "settings": {
       }
