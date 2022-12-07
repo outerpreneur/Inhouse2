@@ -1,0 +1,178 @@
+{%- schema -%}
+{
+  "name": "Page content",
+  "class": "page-content-section",
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "collection",
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        },
+        {
+          "id": "max_products",
+          "type": "range",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "ct",
+          "label": "products to show",
+          "default": 2
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "info": "defaults to collection title"
+        },
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "Slide content"
+        },
+        {
+          "id": "show_button",
+          "type": "checkbox",
+          "label": "Show button?",
+          "default": true
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "button Text",
+          "placeholder": "Shop now",
+          "info": "Defaults to \"Shop Now\""
+        }
+      ]
+    },
+    {
+      "type": "image_text",
+      "name": "image & text",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "choose image"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "placeholder": "slider Title"
+        },
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "Slide content"
+        },
+        {
+          "id": "show_button",
+          "type": "checkbox",
+          "label": "Show button?",
+          "default": true
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Button URL"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "button Text",
+          "placeholder": "Shop now",
+          "info": "Defaults to \"Shop Now\""
+        },
+        {
+          "id": "direction",
+          "type": "select",
+          "label": "direction",
+          "options": [
+            {
+              "value": "rtl",
+              "label": "image &rarr; text"
+            },
+            {
+              "value": "ltr",
+              "label": "text &rarr; image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "quote",
+      "settings": [
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "Slide content"
+        },
+        {
+          "id": "source",
+          "type": "textarea",
+          "label": "Source"
+        },
+        {
+          "id": "show_button",
+          "type": "checkbox",
+          "label": "Show button?",
+          "default": true
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Button URL"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "button Text",
+          "placeholder": "Read more",
+          "info": "Defaults to \"Read more\""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "content",
+      "name": "index content",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-0",
+            "title": "collection Tile",
+            "content": "Lorem impsum",
+            "show_button": true
+          }
+        },
+        {
+          "type": "image_text",
+          "settings": {
+            "title": "New block 1",
+            "content": "Lorem impusm dolor sit amel",
+            "show_button": true,
+            "button_url": "#"
+          }
+        },
+        {
+          "type": "image_text",
+          "settings": {
+            "title": "New block 2",
+            "content": "Lorem impusm dolor sit amel",
+            "show_button": true,
+            "button_url": "#",
+            "direction": "ltr"
+          }
+        }
+      ]
+    }
+  ]
+}
+{%- endschema -%}
