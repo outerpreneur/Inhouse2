@@ -20,15 +20,20 @@
   data-variants="{{ variants_with_quantity_json | url_param_escape }}"
 >
   {%- if has_multiple_variants or has_multiple_options -%}
-    <select id="productSelect">
-      {% for variant in product.variants %}
-        {% if variant.available %}
-          <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-        {% else %}
-          <option disabled="disabled">{{ variant.title }} - sold out</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+    {%- for option in product.options_with_values -%}
+      {%- render 'product-option-row' -%}
+    {%- endfor -%}
+    {% comment %}
+       <select id="productSelect">
+        {% for variant in product.variants %}
+          {% if variant.available %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+          {% else %}
+            <option disabled="disabled">{{ variant.title }} - sold out</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    {% endcomment %}
   {%- endif -%}
 
   <input

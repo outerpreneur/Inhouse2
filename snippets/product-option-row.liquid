@@ -1,0 +1,11 @@
+<div class="product-option-row">
+  <label for="">
+    {{ option.name }}
+  </label>
+
+  <div class="option-values">
+    {%- for value in option.values -%}
+      {{ value }}
+    {%- endfor -%}
+  </div>
+</div>
