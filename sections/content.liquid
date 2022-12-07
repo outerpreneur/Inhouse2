@@ -1,3 +1,43 @@
+<div class="content-wrap">
+  {%- for block in section.blocks -%}
+    <div class="content-block-{{ block.type }}" {{ block.shopify_attributes }}>
+      {%- case block.type -%}
+        {%- when 'collection' -%}
+          {%- assign collection = collections[block.settings.collection] -%}
+
+          <div class="collection-block-info">
+            <h2>
+              {%- if block.settings.title != blank -%}
+                {{ block.settings.title }}
+              {%- else -%}
+                {{ collection.title }}
+              {%- endif -%}
+            </h2>
+            <p>
+              {%- if block.settings.content != blank -%}
+                {{ block.settings.content }}
+              {%- else -%}
+                {{ collection.description }}
+              {%- endif -%}
+            </p>
+            {%- if block.settings.show_button -%}
+              <a href="{{ collection.url }}" class="button"></a>
+              {%- if block.settings.button_text != blank -%}
+                {{ block.settings.button_text }}
+              {%- else -%}
+                {{ 'general.shop.shop_now' | t }}
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+          {%- for product in collection.products limit: block.settings.max_products -%}
+            {% render 'product-cart' %}
+          {%- endfor -%}
+        {%- else -%}
+      {%- endcase -%}
+    </div>
+  {%- endfor -%}
+</div>
+
 {%- schema -%}
 {
   "name": "Page content",
@@ -147,7 +187,7 @@
           "type": "collection",
           "settings": {
             "collection": "collection-0",
-            "title": "collection Tile",
+            "title": "collection Title",
             "content": "Lorem impsum",
             "show_button": true
           }
