@@ -12,6 +12,11 @@
   {%- render 'get-variants-with-quantity-json' with product: product -%}
 {%- endif -%}
 
+{%- assign can_add_to_cart = false -%}
+{%- if has_multiple_variants == false and product.available -%}
+  {%- assign can_add_to_cart = true -%}
+{%- endif -%}
+
 <form
   id="add-to-cart-form"
   action="/cart/add"
@@ -21,19 +26,14 @@
 >
   {%- if has_multiple_variants or has_multiple_options -%}
     {%- for option in product.options_with_values -%}
-      {%- render 'product-option-row' -%}
+      {%- assign option_name = 'option' | append: 'option.position' -%}
+
+      {%- if option.name != 'Color' -%}
+        {%- render 'product-option-row', option: option, option_name: option_name, type: 'select' -%}
+      {%- else -%}
+        {%- render 'product-option-row', option: option, option_name: option_name -%}
+      {%- endif -%}
     {%- endfor -%}
-    {% comment %}
-       <select id="productSelect">
-        {% for variant in product.variants %}
-          {% if variant.available %}
-            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-          {% else %}
-            <option disabled="disabled">{{ variant.title }} - sold out</option>
-          {% endif %}
-        {% endfor %}
-      </select>
-    {% endcomment %}
   {%- endif -%}
 
   <input
@@ -46,5 +46,14 @@
   <span class="js-price" data-default-price="{{ product.price | money }}">{{ current_variant.price | money }}</span>
   <label for="Quantity">quantity</label>
   <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="add-to-cart-button">Add to cart</button>
+  <button
+    type="submit"
+    name="add"
+    id="add-to-cart-button"
+    {%- if can_add_to_cart != true -%}
+      disabled
+    {%- endif -%}
+  >
+    Add to cart
+  </button>
 </form>

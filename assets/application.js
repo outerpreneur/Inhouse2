@@ -86,3 +86,28 @@ $(document).ready(function() {
 
 })
 
+// ADD TO CART FORM
+
+let
+    addToCartFormSelector = '#add-to-cart-form',
+    productOptionSelector = addToCartFormSelector + '[name*=option]'
+
+let productForm = {
+    onProductOptionChanged: function(event) {
+        $form = $(this).closest(addToCartFormSelector),
+        selectedVariant = productForm.getActiveVariant($form);
+    },
+    getActiveVariant: function($form) {
+        let
+            variants = JSON.parse(decodeURIComponent($form.attr('data-variants')));
+            console.log(variants)
+    },
+    validate: function() {
+
+    },
+    init: function() {
+        $(document).on('change', productOptionSelector, productForm.onProductOptionChanged);
+    }
+};
+
+productForm.init()
