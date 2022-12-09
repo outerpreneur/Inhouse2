@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 let
     addToCartFormSelector = '#add-to-cart-form',
-    productOptionSelector = addToCartFormSelector + '[name*=option]'
+    productOptionSelector = addToCartFormSelector + ' [name*=option]'
 
 let productForm = {
     onProductOptionChanged: function(event) {
