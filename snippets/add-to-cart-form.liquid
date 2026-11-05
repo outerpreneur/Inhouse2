@@ -54,9 +54,9 @@
       {% endif %}
 
       {% if option.name == 'Color' %}
-        {% render 'product-option-row' with option: option, option_name: option_name, selected: selected, force_colors: true %}
+        {% render 'product-option-row' with option, option: option, option_name: option_name, selected: selected, force_colors: true %}
       {% else %}
-        {% render 'product-option-row' with option: option, option_name: option_name, type: 'select', selected: selected %}
+        {% render 'product-option-row' with option, option: option, option_name: option_name, type: 'select', selected: selected %}
       {% endif %}
     {% endfor %}
   {% endif %}
@@ -82,3 +82,20 @@
     <span class="js-price" data-default-price="{{ product.price | money }}">{{ current_variant.price | money }}</span>
   </button>
 </form>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-option-row' with option: option, option_name: option_name,
+    selected: selected, force_colors: true %}"
+  to: "{% render 'product-option-row' with option, option: option, option_name: option_name,
+    selected: selected, force_colors: true %}"
+  position: 1931..2058
+- from: "{% render 'product-option-row' with option: option, option_name: option_name,
+    type: 'select', selected: selected %}"
+  to: "{% render 'product-option-row' with option, option: option, option_name: option_name,
+    type: 'select', selected: selected %}"
+  position: 2084..2207
+{% endcomment %}

@@ -27,7 +27,7 @@
             </option>
           {% endfor %}
         </select>
-        {% render 'inline-icon' with svg: 'icon-arrow-down.svg', class: 'current-color-stroke' %}
+        {% render 'inline-icon' with svg, svg: 'icon-arrow-down.svg', class: 'current-color-stroke' %}
       </div>
 
     {% else %}
@@ -45,7 +45,7 @@
         >
         <label for="{{ radio_id }}">
           {% if force_colors == true %}
-            {% render 'option-color' with color: value %}
+            {% render 'option-color' with color, color: value %}
           {% else %}
             {{ value }}
           {% endif %}
@@ -54,3 +54,18 @@
     {% endif %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'inline-icon' with svg: 'icon-arrow-down.svg', class: 'current-color-stroke'
+    %}"
+  to: "{% render 'inline-icon' with svg, svg: 'icon-arrow-down.svg', class: 'current-color-stroke'
+    %}"
+  position: 847..941
+- from: "{% render 'option-color' with color: value %}"
+  to: "{% render 'option-color' with color, color: value %}"
+  position: 1459..1511
+{% endcomment %}
